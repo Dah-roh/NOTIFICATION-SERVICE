@@ -37,10 +37,7 @@ public class EmailServiceImpl implements EmailService {
             msg.setFrom(emailNotificationRequest.getFrom());
             msg.setText(emailNotificationRequest.getNarration());
             msg.setTo(emailNotificationRequest.getTo());
-
-            msg.setSubject("Testing from Spring Boot");
-            msg.setText("Hello World \n Spring Boot Email");
-
+            msg.setSubject(emailNotificationRequest.getSubject());
             mailSender.send(msg);
             return null;
         } catch (Exception e) {
