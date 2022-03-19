@@ -7,6 +7,7 @@ import com.reloadly_task.notificationservice.service.EmailService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("notification")
 public class EmailController {
 
     private final EmailService emailService;
@@ -15,7 +16,7 @@ public class EmailController {
         this.emailService = emailService;
     }
 
-    @PostMapping("notification/email")
+    @PostMapping("/email")
     NotificationResponse sendEmail(@RequestBody EmailNotificationRequest emailNotificationRequest){
         return emailService.sendEmail(emailNotificationRequest);
     };
